@@ -4,7 +4,7 @@ import Feedback from './components/Feedback'
 import Footer from './components/Footer'
 import Course from './components/Course'
 
-function App() {
+function App(){
   const courses = [
   {
     courseName: "JavaScript Mastery",
