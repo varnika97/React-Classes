@@ -6,10 +6,14 @@ function Counter(){
  var[c,setC] = React.useState(0)
 
     function inc(){
-      setC(c+1);      
+      setC((cv)=>{
+        return cv + 1
+      });      
     }
     function dec(){
-        setC(c-1)
+        setC((cv)=>{
+          return cv - 1
+        })
     }
     return(
         <div className="border border-2 border-success p-2 m-3">
