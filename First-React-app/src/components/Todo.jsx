@@ -1,6 +1,7 @@
 import React, { useState } from "react"
+import TodoRefactoring from "./TodoRefactoring";
 function Todo(){
-    var [todos,settodos] = useState(['books','games','toys','travel'])
+    var [todos,settodos] = useState(['Books','Games','Toys','Travel'])
     function addNewtodo(){
         var ntodo = document.getElementById('d1').value ;
         settodos([...todos, ntodo]);
@@ -10,11 +11,12 @@ function Todo(){
         <h1>Todolist</h1>
         <input type="text" id="d1"/>
         <button onClick={()=>{addNewtodo()}}>Add Todo</button>
-        <ul>
+        <ul className="list-unstyled">
             {
                 todos.map((t)=>{
-                return  <li>{t}</li>
-                })
+                return (
+                <TodoRefactoring t={t}></TodoRefactoring>
+                  )  })
             }
         </ul>
         </div>
