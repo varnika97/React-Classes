@@ -7,9 +7,17 @@ function Todo(){
         settodos([...todos, ntodo]);
     }
     function deletetodo(indx){
-        var temp = [...todos];
-          temp.splice(indx,1);
-        settodos([...temp]);
+        // var temp = [...todos];
+        //  temp.splice(indx,1) 
+        // settodos(()=>{
+        //    return [...temp]
+        // });  OR
+
+        settodos((ctodos)=>{
+            ctodos.splice(indx,1)
+             return [...ctodos]
+        })
+         
     }
     return(
         <div className="border border-2 border-success m-2 p-2">
