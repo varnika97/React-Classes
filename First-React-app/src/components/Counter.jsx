@@ -11,9 +11,7 @@ function Counter(){
       });      
     }
     function dec(){
-        setC((cv)=>{
-          return cv - 1
-        })
+        
     }
     return(
         <div className="border border-2 border-success p-2 m-3">
