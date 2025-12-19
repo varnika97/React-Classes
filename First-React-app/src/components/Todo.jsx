@@ -6,6 +6,11 @@ function Todo(){
         var ntodo = document.getElementById('d1').value ;
         settodos([...todos, ntodo]);
     }
+    function deletetodo(indx){
+        var temp = [...todos];
+          temp.splice(indx,1);
+        settodos([...temp]);
+    }
     return(
         <div className="border border-2 border-success m-2 p-2">
         <h1>Todolist</h1>
@@ -13,11 +18,12 @@ function Todo(){
         <button onClick={()=>{addNewtodo()}}>Add Todo</button>
         <ul className="list-unstyled">
             {
-                todos.map((t)=>{
+                todos.map((t,i)=>{
                 return (
-                <TodoRefactoring t={t}></TodoRefactoring>
+                <TodoRefactoring t={t} deletetodo={deletetodo} i={i}></TodoRefactoring>
                   )  })
             }
+            
         </ul>
         </div>
     )
