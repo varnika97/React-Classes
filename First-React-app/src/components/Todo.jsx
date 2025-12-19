@@ -13,9 +13,13 @@ function Todo(){
         //    return [...temp]
         // });  OR
 
-        settodos((ctodos)=>{
-            ctodos.splice(indx,1)
-             return [...ctodos]
+        // settodos((ctodos)=>{
+        //     ctodos.splice(indx,1)
+        //      return [...ctodos]
+        // })  OR
+
+        // this is best practice
+        settodos((ctodos)=>{ctodos.filter((t,i) => i != indx)
         })
          
     }
