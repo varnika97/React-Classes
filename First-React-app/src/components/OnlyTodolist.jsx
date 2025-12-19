@@ -3,7 +3,9 @@ function OnlyTodolist(){
     var [todos, setTodo] =useState(['books','Games',"Movies",'Travel'])
     function addNewtodo(){
         var ntodo = document.getElementById('d1').value;
-        setTodo([...todos, ntodo])
+        setTodo((todo)=>{  // todo is current todo its normal array
+             return([...todo,ntodo])
+        })
     }
     return(
         <div className="border border-2 border-success m-2 p-2">
